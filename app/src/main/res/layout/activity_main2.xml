@@ -19,4 +19,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hola marco como estas" />
+
+    <Button
+        android:id="@+id/btn_este"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>

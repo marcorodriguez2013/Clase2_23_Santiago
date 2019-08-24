@@ -1,6 +1,7 @@
 package com.example.clase2_23_santiago;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                // Intent intent = new Intent(Intent.ACTION_DIAL,url);
                 intent.putExtra("nombre","santiago");
                 intent.putExtra("edad",20);
-                startActivity(intent);
+                startActivityForResult(intent,1);
                 //MarcarTelefono();
                 //setResult(RESULT_OK,intent);
                 //finish();
@@ -60,5 +61,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);*/
         }
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+       // btn_segundo.setText(data.getStringExtra("respuesta"));
+        if(requestCode==1){
+            if(resultCode == RESULT_OK){
+                    btn_segundo.setText(data.getStringExtra("respuesta"));
+            }
+        }
     }
 }
